@@ -3,7 +3,7 @@ import './header.css';
 export default function Header() {
   return (
     <header>
-        <div className='header-content'>
+        <div className='container'>
             <span>Tech<strong>Bits</strong></span>
         </div>
     </header>

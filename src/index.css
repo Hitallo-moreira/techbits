@@ -18,3 +18,7 @@ h1 {
 #root {
   width: 100%;
 }
+
+.container {
+  padding: 0 40px;
+}
