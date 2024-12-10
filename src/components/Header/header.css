@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    height: 80px;
+    width: 100%;
+    color: #f4f4f4;
+
+    .header-content {
+        padding: 0 40px;
+
+        span {
+            font-size: 32px;
+            font-weight: 400;
+        }
+    
+        span strong{
+            font-size: 32px;
+            color: rgb(235, 152, 0);
+        }
+    }
+}
