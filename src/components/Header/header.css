@@ -1,18 +1,13 @@
 header {
     display: flex;
     align-items: center;
-    background-color: #000;
+    background-color: #075800;
     height: 80px;
     width: 100%;
     color: #f4f4f4;
 
     span {
         font-size: 32px;
-        font-weight: 400;
-    }
-
-    span strong {
-        font-size: 32px;
-        color: #eb9800;
+        font-weight: 500;
     }
 }

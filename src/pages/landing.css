@@ -8,7 +8,7 @@
     background-image: url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.2;
     z-index: 0;
 }
 
@@ -26,7 +26,7 @@
 .about button {
     height: 50px;
     width: 180px;
-    background-color: #eb9800;
+    background-color: #075800;
     border: none;
     border-radius: 12px;
     font-size: 18px;
@@ -37,5 +37,5 @@
 }
 
 .about button:hover {
-    background-color: #c98200;
+    background-color: #096e00;
 }

@@ -5,9 +5,8 @@ export default function LandingPage() {
   return (
     <div className='container content'>
       <div className="about">
-        <h1>TechBits</h1>
-        <p>Welcome to TechBits Store, your go-to online shop for top-tier hardware components! Whether you're building a custom PC, upgrading your gaming rig, or enhancing your office setup, we've got you covered. Explore a wide range of products, from high-performance GPUs and motherboards to reliable power supplies and lightning-fast SSDs.
-          With competitive prices, secure shopping, and fast delivery, BoostTech Store ensures a seamless experience from click to doorstep. Upgrade your tech game today—because quality hardware makes all the difference!</p>
+        <h1>Plantify</h1>
+        <p>At Plantify, we bring the beauty of nature to your doorstep. Our mission is to help you create a greener, healthier, and more vibrant living space with a curated selection of high-quality plants, pots, and gardening essentials. Whether you're a seasoned plant parent or just starting your journey, Plantify offers everything you need to nurture your love for greenery. Let’s grow together! 🌿</p>
           <button>Get Started</button>
       </div>
     </div>

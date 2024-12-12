@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
         <div className='container'>
-            <span>Tech<strong>Bits</strong></span>
+            <span>Plantify</span>
         </div>
     </header>
   )
