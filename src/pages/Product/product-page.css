@@ -1,0 +1,25 @@
+.product-container {
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+    color: #000;
+}
+
+.product-container h2 {
+    color: #fff;
+}
+
+.card {
+    display: flex;
+    gap: 50px;
+}
+
+.card div {
+    background-color: #f4f4f4;
+    width: 200px;
+}
+
+.card button {
+    height: 40px;
+    width: 100%;
+}
