@@ -11,12 +11,12 @@
 
 .cart-wrapper .item {
     border-bottom: 2px solid #cecece;
-    padding-bottom: 15px;
+    padding: 15px 0;
 }
 
 .cart-wrapper .product-image {
-    height: auto;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 
 .cart-wrapper .name-container {
@@ -32,7 +32,7 @@
 .cart-wrapper .item-actions {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     margin-top: 15px;
 }
 
@@ -40,14 +40,15 @@
     display: flex;
     border: 2px solid #cecece;
     height: 8px;
-    width: 57px;
-    padding: 15px;
+    width: 80px;
+    padding: 15px 5px;
     border-radius: 12px;
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
     font-weight: 500;
     gap: 5px;
+
 }
 
 .cart-wrapper .delete button {
@@ -78,9 +79,11 @@
     align-items: end;
 }
 
-.cart-wrapper .final-price .cart-total {
+.cart-wrapper .final-price .summary {
+    display: flex;
     font-size: 24px;
     font-weight: 700;
+    gap: 20px;
 }
 
 .cart-wrapper .final-price .btn-actions {

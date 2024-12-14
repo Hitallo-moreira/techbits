@@ -9,6 +9,7 @@ export default function Cart() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeItemFromCart(itemId));
@@ -64,19 +65,23 @@ export default function Cart() {
                         </div>
                     ))
                 ) : (
-                    <p>Your cart is empty</p>
+                    <p>Your cart is empty.</p>
                 )}
 
                 {cartItems.length > 0 && (
                     <div className="final-price">
-                        <div className="cart-total">
-                            Total: ${totalAmount}
+                        <div className="summary">
+                            <div className="total-items">
+                                Items: {totalQuantity}
+                            </div>
+                            <div className="cart-total">
+                                Total: ${totalAmount}
+                            </div>
                         </div>
                         <div className="btn-actions">
                             <button className="continue" onClick={handleContinue}>Continue shopping</button>
                             <button className="checkout"  onClick={handleCheckout}>Checkout</button>
                         </div>
-                        <button className="clear-cart" onClick={handleClearCart}>Clear Cart</button>
                     </div>
                 )}
             </div>
