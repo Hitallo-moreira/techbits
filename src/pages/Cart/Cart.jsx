@@ -15,10 +15,6 @@ export default function Cart() {
         dispatch(removeItemFromCart(itemId));
     };
 
-    const handleClearCart = () => {
-        dispatch(clearCart());
-    };
-
     const handleIncreaseQuantity = (itemId) => {
         dispatch(increaseItemQuantity(itemId));
     };
