@@ -20,6 +20,10 @@ header {
     padding: 0 40px;
 }
 
+.header-container .logo {
+    cursor: pointer;
+}
+
 .header-container img {
     height: auto;
     width: 32px;
