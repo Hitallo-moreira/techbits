@@ -1,48 +1,85 @@
-import React from 'react'
+import React from 'react';
 import './cart.css';
-import trash from '../../../public/trash.png'
+import trash from '../../../public/trash.png';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuantity } from '../../components/CartSlice';
+
 export default function Cart() {
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+    const handleRemoveItem = (itemId) => {
+        dispatch(removeItemFromCart(itemId));
+    };
+
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    };
+
+    const handleIncreaseQuantity = (itemId) => {
+        dispatch(increaseItemQuantity(itemId));
+    };
+
+    const handleDecreaseQuantity = (itemId) => {
+        dispatch(decreaseItemQuantity(itemId));
+    };
+
     const navigate = useNavigate();
 
     const handleContinue = () => {
         navigate('/products');
     };
 
+    const handleCheckout = () => {
+        alert('Coming Soon');
+    }
+
     return (
-        <div className='cart-container'>
+        <div className="cart-container">
             <div className="cart-wrapper">
-                <div className="item">
-                    <img className="product-image" src="https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" srcset="" />
-                    <div className='name-container'>
-                        <span>Nome</span>
-                    </div>
-                    <div className='price-container'>
-                        <span>$ 5.00</span>
-                    </div>
-                    <div className="item-actions">
-                        <div className='qty-actions'>
-                            <button className='min'>-</button>
-                            <div className='items-qty'>1</div>
-                            <button className='max'>+</button>
+                {cartItems.length > 0 ? (
+                    cartItems.map((item) => (
+                        <div className="item" key={item.id}>
+                            <img className="product-image" src={item.thumbnail} alt={item.name} />
+                            <div className="name-container">
+                                <span>{item.name}</span>
+                            </div>
+                            <div className="price-container">
+                                <span>${item.price}</span>
+                            </div>
+                            <div className="item-actions">
+                                <div className="qty-actions">
+                                    <button className="min" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                                    <div className="items-qty">{item.quantity}</div>
+                                    <button className="max" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                                </div>
+                                <div className="delete">
+                                    <button onClick={() => handleRemoveItem(item.id)}>
+                                        <img src={trash} alt="delete" />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div className="delete">
-                            <button>
-                                <img src={trash} alt="delete" />
-                            </button>
+                    ))
+                ) : (
+                    <p>Your cart is empty</p>
+                )}
+
+                {cartItems.length > 0 && (
+                    <div className="final-price">
+                        <div className="cart-total">
+                            Total: ${totalAmount}
                         </div>
+                        <div className="btn-actions">
+                            <button className="continue" onClick={handleContinue}>Continue shopping</button>
+                            <button className="checkout"  onClick={handleCheckout}>Checkout</button>
+                        </div>
+                        <button className="clear-cart" onClick={handleClearCart}>Clear Cart</button>
                     </div>
-                </div>
-                <div className="final-price">
-                    <div className="cart-total">
-                        Total: $0.00
-                    </div>
-                    <div className="btn-actions">
-                        <button className='continue' onClick={handleContinue}>Continue shopping</button>
-                        <button className='checkout'>Checkout</button>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
-    )
+    );
 }
